@@ -1,26 +1,32 @@
 require "./lib/connect_four"
 describe Player do
-
-    it "store player 1 piece" do
-        player = Player.new("player1")
-        expect(player.piece).to eql("O")
-    end
-    
     it "create a player" do
         player = Player.new("player1")
         expect(player.name).to eql("player1")
     end
 
-    it "store player 2 piece" do
-        player2 = Player.new("player2")
-        expect(player2.piece).to eql("X")
+    it "store player 1 piece" do
+        player = Player.new("player1")
+        expect(player.piece).to eql("X")
     end
 
+    it "store player 2 piece" do
+        player2 = Player.new("player2")
+        expect(player2.piece).to eql("O")
+    end
 end
 
 describe Game do
-    describe "#somefunction" do
-        it "shoudl do something" do
+    describe "#player_selection" do
+        it "have the player make a selection" do
+            expect().to eql()
+        end
+
+        it "should place the players piece on the board correctly" do
+            expect().to eql()
+        end
+
+        it "should advance to the next players turn" do
             expect().to eql()
         end
     end
@@ -35,7 +41,7 @@ describe Board do
 
         it "the grid should be empty" do
             test = Board.new
-            expect(test.array.flatten.all? {|value| value == ' ' }).to equal(true)
+            expect(test.array.flatten.all? {|value| value == '| . |' }).to equal(true)
         end
     end
 

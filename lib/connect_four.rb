@@ -14,7 +14,7 @@ class Player
     end
 
     def pick_piece()
-        @@player_count == 1 ? "O" : "X" #can change this to make the pieces more interesting
+        @@player_count % 2 == 1 ? "O" : "X" #can change this to make the pieces more interesting
     end
 end
 
@@ -28,11 +28,13 @@ class Board
     end
 
     def create_board()
-        array = Array.new(6) { Array.new(7) { ' '}}
+        array = Array.new(6) { Array.new(7) { '| . |'}}
     end
 
     def print_board()
-        board.array.each {|x| print "#{x}\n"}
+        puts "----------select a column---------"
+        print "  1    2    3    4    5    6    7\n"
+        @array.each {|x| print "#{x.join('')}\n"}
         puts ""
     end
 
@@ -81,24 +83,10 @@ class Board
         return false;
     end
 end
-=begin
+
+
 board = Board.new
 player = Player.new("player")
 player2 = Player.new("player2")
-puts player.piece
-puts player2.piece
-puts ""
-#puts player_count
-puts Player.player_count
 
-board.array[0][0] = "O"
-board.array[0][1] = "O"
-board.array[0][2] = "O"
-board.array[0][3] = "O"
-
-
-puts""
-
-puts board.array[0][0] == player.piece
-puts board.check_winner(player)
-=end
+board.print_board
