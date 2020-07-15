@@ -27,7 +27,9 @@ describe Game do
         end
 
         it "should advance to the next players turn" do
-            expect().to eql()
+            test_game = Game.new
+            test_game.turn
+            expect(test_game.turn).to eql(2)
         end
     end
 end

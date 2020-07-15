@@ -19,6 +19,23 @@ class Player
 end
 
 class Game
+    attr_accessor :turn
+    def initialize()
+        @turn = 1
+        @player1 = Player.new("player1")
+        @player2 = Player.new("player2")
+        @board = Board.new(())
+        gameplay()
+    end
+    
+    def gameplay()
+        while @turn < 42
+            @turn % 2 = 1 ? player_turn(@player1) ? player_turn(@player2)
+        end
+    end
+
+    def player_turn(player)
+    end
 end
 
 class Board
