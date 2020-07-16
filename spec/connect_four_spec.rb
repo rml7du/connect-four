@@ -19,6 +19,7 @@ end
 describe Game do
     describe "#player_selection" do
         it "have the player make a selection" do
+            test_game = Game.new
             expect().to eql()
         end
 
@@ -28,7 +29,7 @@ describe Game do
 
         it "should advance to the next players turn" do
             test_game = Game.new
-            test_game.turn
+            test_game.player_turn
             expect(test_game.turn).to eql(2)
         end
     end
@@ -51,10 +52,10 @@ describe Board do
         it "should return true if there are 4 pieces of the same 'color' in a row" do
             test = Board.new
             player = Player.new("player1")
-            test.array[0][0] = "X"
-            test.array[0][1] = "X"
-            test.array[0][2] = "X"
-            test.array[0][3] = "X"
+            test.array[0][0] = "| #{player.piece} |" 
+            test.array[0][1] = "| #{player.piece} |" 
+            test.array[0][2] = "| #{player.piece} |" 
+            test.array[0][3] = "| #{player.piece} |" 
             expect(test.check_winner(player)).to eql(true)
         end
     end
