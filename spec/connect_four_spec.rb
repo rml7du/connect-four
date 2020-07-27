@@ -100,34 +100,29 @@ describe Board do
     end
 end
 
-=begin
+
 
 describe Game do
     describe "#player_selection" do
         it "have the player make a selection" do
             test = Game.new
-            allow_any_instance_of(Object).to receive(:gets).and_return "1\n"
-            expect(test.board.array[0][0]).to eql("| X |")
+            #allow(test).to receive(:gets).and_return("1\n")
+            #allow(test).to receive(:gets).and_return("1\n")
+            test.board.print_board()
+            expect(test.board.array[0][0]).to eql("O")
         end
 
         it "should return false when an invalid selection is made" do
-            test = GamePlay.new()
-            allow_any_instance_of(Object).to receive(:gets).and_return "10\n"
-            
-
-            expect(board.selection(player1)).to eql(false)
-
-        end
-
-        it "should place the players piece on the board correctly" do
-            expect().to eql()
+            test = Game.new
+            allow(test).to receive(:gets).and_return("10\n")
+            expect(test.selection(test.player1)).to eql(false)
         end
 
         it "should advance to the next players turn" do
-            test_game = Game.new
-            test_game.player_turn
-            expect(test_game.turn).to eql(2)
+            test = Game.new
+            allow(test).to receive(:gets).and_return("1\n")
+            allow(test).to receive(:gets).and_return("1\n")
+            expect(test.turn).to eql(2)
         end
     end
 end
-=end
